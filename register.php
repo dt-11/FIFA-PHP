@@ -79,14 +79,14 @@ li a:hover {
 </div>
 
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#team-aanmaken">team-aanmaken</a></li>
+  <li><a href="#home">Home</a></li>
+  <li><a href="createTeam.php">team-aanmaken</a></li>
   <li><a href="#overview">overview</a></li>
-  <li><a href="#download">download</a></li>
-  <li><a href="#toernooi">toernooi</a></li>
+  <li><a href="download.php">download</a></li>
+  <li><a href="toernooi.php">toernooi</a></li>
   <li><a href="#team-aanpassen">team aanpassen</a></li>
-  <li><a href="#login">login</a></li>
-  <li><a href="#registreren">registreren</a></li>
+  <li><a href="login.php">login</a></li>
+  <li><a class="active" href="register.php">registreren</a></li>
 </ul><br><br>
 <h2>Registreren</h2>
 
