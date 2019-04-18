@@ -139,12 +139,7 @@ li a:hover {
   <li><a href="register.php">registreren</a></li>
 </ul>
 
-<header>
-    <div class="container_header">
-        <h2>Home</h2>
-        <h2>Poules</h2>
-    </div>
-</header>
+
 
 <main>
     <div class="login_container">
