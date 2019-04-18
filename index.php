@@ -120,7 +120,7 @@ li a:hover {
 
 <body>
     <body>
-
+<main>
 <div class="header">
   <center><h1>Fifa</h1><center>
 </div>
@@ -138,7 +138,7 @@ li a:hover {
 
 
 
-<main>
+
     <div class="login_container">
         <p>Login</p><p>Register</p>
     </div>
