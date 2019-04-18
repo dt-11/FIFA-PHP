@@ -66,55 +66,7 @@ li a:hover {
         background-size: cover;
         color: white;
     }
-    .container_header {
-        display: flex;
-        justify-content: center;
-    }
-
-    .container_header h1 {
-        margin: 20px;
-    }
-
-    .login_container {
-        display: flex;
-        justify-content: center;
-        border: solid 1px;
-        padding: 0;
-    }
-
-    .login_container p {
-        margin-right: 20px;
-        border: solid 1px;
-        padding: 20px
-    }
-
-    .input_container {
-        float: right;
-    }
-
-    .competitie_container {
-        text-align: center;
-    }
-
-    .team_container {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .team_container div {
-        margin: 10px;
-        border: solid 1px;
-    }
-
-    .slot_container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .slot_container img {
-        width: 20%;
-        height: 20%;
-        margin-left: 20px;
+ 
     }
 </style>
 
