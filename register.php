@@ -6,8 +6,30 @@
  * Time: 10:51
  */
 ?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registreren</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        background-image: url("./img/FIFA-19-Logo21-1-768x402.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+    }
+</style>
+<body>
+<h1>Registreren</h1>
+
 <form action="accountController.php" method="post">
-    <input type="hidden" name="type" value="register">
+    <input type="hiddesn" name="type" value="register">
     <div class="form-group">
         <label for="userName">Username</label>
         <input type="text" name="userName" id="userName">
@@ -25,3 +47,6 @@
 
     <input type="submit" value="Register!">
 </form>
+
+</body>
+</html>
