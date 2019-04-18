@@ -92,7 +92,7 @@ li a:hover {
   <li><a href="createTeam.php">team-aanmaken</a></li>
   <li><a href="teamOverview.php">overview</a></li>
   <li><a href="download.php">download</a></li>
-  <li><a class="active" href="toernooi">toernooi</a></li>
+  <li><a class="active" href="toernooi.php">toernooi</a></li>
   <li><a href="teamEdit.php">team aanpassen</a></li>
   <li><a href="login.php">login</a></li>
   <li><a href="register.php">registreren</a></li>
