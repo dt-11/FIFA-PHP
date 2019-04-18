@@ -11,9 +11,11 @@
         margin-right: 100px;
         color: black;
  
-        background: #90EE90;
+        background-image: url("./img/FIFA-19-Logo21-1-768x402.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
           font-size: 28px;
-  font-family: 'klarna',sans-serif;
+        font-family: 'klarna',sans-serif;
     }
     *{
 
@@ -61,9 +63,7 @@ li a:hover {
 }
 
     main {
-        background-image: url("./img/fifa-ea-games.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
+       
         color: white;
     }
  
