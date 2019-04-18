@@ -88,7 +88,7 @@ li a:hover {
   <li><a href="#login">login</a></li>
   <li><a href="#registreren">registreren</a></li>
 </ul><br><br>
-<h1>Registreren</h1>
+<h2>Registreren</h2>
 
 <form action="accountController.php" method="post">
     <input type="hiddesn" name="type" value="register">
