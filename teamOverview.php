@@ -86,7 +86,7 @@ li a:hover {
 <ul>
   <li><a href="#home">Home</a></li>
   <li><a href="createTeam.php">team-aanmaken</a></li>
-  <li><a class="active" href="teamOverview">overview</a></li>
+  <li><a class="active" href="teamOverview.php">overview</a></li>
   <li><a href="download.php">download</a></li>
   <li><a href="toernooi.php">toernooi</a></li>
   <li><a href="#team-aanpassen">team aanpassen</a></li>
