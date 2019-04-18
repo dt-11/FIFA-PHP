@@ -90,7 +90,7 @@ li a:hover {
   <li><a href="login.php">login</a></li>
   <li><a href="register.php">registreren</a></li>
 </ul>
-<h3>
+
 
 <h2>Team aanmaken</h2>
 
