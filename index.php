@@ -92,34 +92,13 @@ li a:hover {
 
 
     <div class="login_container">
-        <p>Login</p><p>Register</p>
+      <center>  <p>Login</p><p>Register</p></center>
     </div>
     <div class="input_container">
         <input type="text" placeholder="Search"><button>Zoeken</button>
     </div>
 
-    <div class="competitie_container">
-        <h2>Competities</h2>
-            <div class="poule">1</div>
-            <div class="poule">2</div>
-            <div class="poule">3</div>
-            <div class="poule">4</div>
-            <div class="poule">5</div>
-    </div>
-
-    <div class="team_container">
-        <div class="team">team 1</div>
-        <div class="team">team 2</div>
-        <div class="team">team 3</div>
-        <div class="team">team 4</div>
-        <div class="team">team 5</div>
-        <div class="team">team 6</div>
-    </div>
-    
-    <div class="slot_container">
-        <p>Wij zijn beoordeeld met 5 sterren</p>
-        <img src="img/beoordeling-vijf-sterren.jpg" alt="">
-    </div>
+ 
 </main>
 
 <footer>
