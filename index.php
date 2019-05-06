@@ -7,8 +7,6 @@
 <style>
 
     body {
-        margin-left: 100px;
-        margin-right: 100px;
         color: black;
  
         background-image: url("./img/FIFA-19-Logo21-1-768x402.jpg");
@@ -66,7 +64,8 @@ li a:hover {
        
         color: white;
     }
- 
+    .input_container{
+        margin-left: 700px;
     }
 </style>
 

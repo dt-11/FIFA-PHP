@@ -96,13 +96,13 @@ li a:hover {
 <h2>Team Overzicht</h2>
     <div class="overzicht">
         <ul>
-            <li>Neall = gay</li>
-            <li>thomas de stoomlocomotief</li>
-            <li>Nemo</li>
-            <li>Paashaas</li>
-            <li>Sinterklaas</li>
-            <li>Kerstman</li>
-            <li>Yolo</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
 
     </div>
