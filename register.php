@@ -91,7 +91,7 @@ li a:hover {
 <h2>Registreren</h2>
 
 <form action="accountController.php" method="post">
-    <input type="hiddesn" name="type" value="register">
+    <input type="hidden" name="type" value="register">
     <div class="form-group">
         <label for="userName">Username</label>
         <input type="text" name="userName" id="userName">
