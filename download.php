@@ -17,6 +17,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Downloaden</title>
 </head>
+
+<body>
+
+    <div class="header">
+        <h1>Fifa</h1>
+    </div>
+
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="createTeam.php">team-aanmaken</a></li>
+        <li><a href="teamOverview.php">overview</a></li>
+        <li><a class="active" href="download.php">download</a></li>
+        <li><a href="toernooi.php">toernooi</a></li>
+        <li><a href="teamEdit.php">team aanpassen</a></li>
+        <li><a href="login.php">login</a></li>
+        <li><a href="register.php">registreren</a></li>
+    </ul>
+
+    <div class="download">
+        <div class="tekst">
+            <h2>Downloaden</h2>
+        </div>
+        <div class="img">
+            <img src="img/visualstudio.png" alt="">
+        </div>
+        <div class="button">
+            <button>Klik hier om te downloaden</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
 <style>
     body {
         text-align: center;
@@ -24,10 +57,8 @@
         background-image: url("./img/FIFA-19-Logo21-1-768x402.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-      font-size: 28px;
-  font-family: 'klarna',sans-serif;
-}
-
+        font-size: 28px;
+        font-family: 'klarna',sans-serif;
     }
 
     img {
@@ -42,80 +73,47 @@
     button {
         padding: 30px;
     }
+
     *{
+        margin: 0px;
+        padding: 0px;
+    }
 
-  margin: 0px;
-  padding: 0px;
-}
+    h1 {
+         background-color: #4CAF50;
+         color: #FFFFFF;
+         margin: 0;
+        }
 
-h1 {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+    }
 
-     background-color: #4CAF50;
-     color: #FFFFFF;
-     margin: 2;
+    li {
+      float: left;
+    }
 
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-li {
-  float: left;
-}
+    li a:hover {
+      background-color: #111;
+    }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
-}
+    .active {
+      background-color: #4CAF50;
+    }
 </style>
-<body>
 
-
-<div class="header">
-  <center><h1>Fifa</h1><center>
-</div>
-
-<ul>
-  <li><a href="index.php">Home</a></li>
-  <li><a href="createTeam.php">team-aanmaken</a></li>
-  <li><a href="teamOverview.php">overview</a></li>
-  <li><a class="active"href="download.php">download</a></li>
-  <li><a href="toernooi.php">toernooi</a></li>
-  <li><a href="teamEdit.php">team aanpassen</a></li>
-  <li><a href="login.php">login</a></li>
-  <li><a href="register.php">registreren</a></li>
-</ul>
-<h3>
-    <div class="download">
-        <div class="tekst">
-            <h2>Downloaden</h2>
-        </div>
-        <div class="img">
-            <img src="img/visualstudio.png" alt="">
-        </div>
-        <div class="button">
-            <button>Klik hier om te downloaden</button>
-        </div>
-
-    </div>
-
-</body>
-</html>
