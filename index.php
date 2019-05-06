@@ -25,9 +25,8 @@
 
     <div class="login_container">
         <h2>Home</h2>
-        <p>Login</p><p>Register</p>
     </div>
-    
+
 
 </main>
 

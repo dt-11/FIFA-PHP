@@ -55,15 +55,7 @@
     <input type="submit" value="Login">
     <p> <p>Heb je nog geen account?<a href="register.php">Klik hier</a> om je te registreren</p>
 
-    <br>
-    <br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <footer>
-        fifa©
-        <br>
-    </footer>
-
-</form>
+    </form>
 </body>
 </html>
 
