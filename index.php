@@ -25,11 +25,8 @@
 
     <div class="login_container">
         <h2>Home</h2>
-        <p>Login</p><p>Register</p>
     </div>
-    <div class="input_container">
-        <input type="text" placeholder="Search"><button>Zoeken</button>
-    </div>
+
 
 </main>
 
