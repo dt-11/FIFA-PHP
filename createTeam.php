@@ -5,7 +5,7 @@
  * Date: 18-4-2019
  * Time: 10:26
  */
-
+    require "header.php"
 ?>
 
 <!doctype html>
@@ -55,57 +55,6 @@
 </body>
 </html>
 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        text-align: center;
-        background-image: url("./img/FIFA-19-Logo21-1-768x402.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        font-size: 28px;
-        font-family: 'klarna',sans-serif;
-}
- 
-    h1 {
-        background-color: #4CAF50;
-        color: #FFFFFF;
-        margin: 0;
-}
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-    }
-
-    li {
-        float: left;
-    }
-
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    li a:hover {
-      background-color: #111;
-    }
-
-    .active {
-      background-color: #4CAF50;
-    }
-
-</style>
 
 
