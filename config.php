@@ -5,6 +5,8 @@
  * Date: 15-4-2019
  * Time: 10:50
  */
+session_start();
+
 
 $dbHost = "localhost";
 $dbName = "fifa";

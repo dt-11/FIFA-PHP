@@ -5,19 +5,25 @@
  * Date: 18-4-2019
  * Time: 10:44
  */
-require "header.php"
+require "header.php";
+
+require 'config.php';
+
+if ( !isset( $_SESSION['sID'] ) ) {
+    header('location: index.php');
+    exit;
+}
 ?>
 
 <body>
     <ul>
-        <li><a href="index.php">Home</a></li>
+        <li><a href="indexLogged.php">Home</a></li>
         <li><a href="createTeam.php">team-aanmaken</a></li>
         <li><a href="teamOverview.php">overview</a></li>
         <li><a class="active" href="download.php">download</a></li>
         <li><a href="toernooi.php">toernooi</a></li>
         <li><a href="teamEdit.php">team aanpassen</a></li>
-        <li><a href="login.php">login</a></li>
-        <li><a href="register.php">registreren</a></li>
+        <li><a href="logout.php">logout</a></li>
     </ul>
 
     <div class="download">

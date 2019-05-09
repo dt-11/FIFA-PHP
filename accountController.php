@@ -14,9 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 require 'config.php';
 
 if ($_POST ['type'] == 'register'){
-    $userName     = trim($_POST['userName']);
-    $userPassword = trim($_POST['userPassword']);
-    $userEmail    = trim($_POST['userEmail']);
+    $userName     = htmlentities(trim($_POST['userName']));
+    $userPassword = htmlentities(trim($_POST['userPassword']));
+    $userEmail    = htmlentities(trim($_POST['userEmail']));
 
     $sqlCheckEmail = "SELECT * FROM users WHERE userEmail = :userEmail";
 
@@ -29,7 +29,7 @@ if ($_POST ['type'] == 'register'){
     $emailExist = $emailVerify->rowCount();
 
     if ($emailExist) {
-        $message = "Email already exists. Choose a different email.";
+        $message = "Email already exists, choose a different email.";
         header("location: register.php?msg=$message");
         exit;
     }
@@ -58,7 +58,7 @@ if ($_POST ['type'] == 'login'){
 
     $connect = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 
-    $sqlLogin = "SELECT * FROM users WHERE userName = '".$userName."'";
+    $sqlLogin = "SELECT * FROM users WHERE userName = '".$userName."' ";
 
     $query = mysqli_query($connect, $sqlLogin);
 
@@ -67,13 +67,15 @@ if ($_POST ['type'] == 'login'){
         $userPasswordUnhash = $row['userPassword'];
 
         if(password_verify($userPassword, $userPasswordUnhash)){
-            $message = "PasswordMatches";
-            header("location: register.php?msg=$message");
+            $message = "Welcome $userName !";
+            session_start();
+            $_SESSION['sID'] = session_id();
+            header("location: indexLogged.php?msg=$message");
             exit;
         }
         else{
-            $message = "PasswordDoesNotMatches";
-            header("location: register.php?msg=$message");
+            $message = "Password or username does not match";
+            header("location: login.php?msg=$message");
             exit;
         }
     }

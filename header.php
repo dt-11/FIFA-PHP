@@ -6,6 +6,15 @@
  * Time: 11:51
  */
 
+//re
+//if ($_SESSION['sId'] == session_id()){
+//    session_start();
+//}
+//else{
+//    session_destroy();
+//}
+
+
 ?>
 
 <!doctype html>
