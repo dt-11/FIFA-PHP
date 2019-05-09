@@ -18,8 +18,8 @@ if ($_POST ['type'] == 'register'){
     $userPassword = htmlentities(trim($_POST['userPassword']));
     $userEmail    = htmlentities(trim($_POST['userEmail']));
 
+    //controlleren of de email al bestaat.
     $sqlCheckEmail = "SELECT * FROM users WHERE userEmail = :userEmail";
-
     $emailVerify = $db->prepare($sqlCheckEmail);
     $emailVerify->bindParam(":userEmail", $userEmail);
     $emailVerify->execute([
@@ -35,7 +35,7 @@ if ($_POST ['type'] == 'register'){
     }
     else{
         $userPassword = password_hash($userPassword, PASSWORD_DEFAULT);
-
+        //account is volgens de voorwaarden en word aangemaakt.
         $sqlCreateAccount = "INSERT INTO users (userName, userPassword, userEmail)
                               VALUES (:userName, :userPassword, :userEmail)";
 
@@ -70,6 +70,7 @@ if ($_POST ['type'] == 'login'){
             $message = "Welcome $userName !";
             session_start();
             $_SESSION['sID'] = session_id();
+            //is de gebruiker een admin? 1=ja - 0=nee
             if($row['isAdmin'] == 1){
                 $_SESSION['adminID'] = true;
                 header("location: indexLogged.php?msg=$message");
@@ -87,4 +88,48 @@ if ($_POST ['type'] == 'login'){
             exit;
         }
     }
+}
+if ($_POST ['type'] == 'createTeam') {
+
+
+    $teamName = htmlentities(trim($_POST['teamName']));
+    $teamPlayers = htmlentities(trim($_POST['playerValue']));
+    $_SESSION['sID'] = session_id();
+    $id = $_SESSION['sID'];
+
+    $sqlId = "SELECT * FROM users WHERE userId = :id";
+    $prepareId = $db->prepare($sqlId);
+    $prepareId->execute([
+        ':id' => $id
+    ]);
+
+    $sqlCheckTeam = "SELECT * FROM teams WHERE teamName = :teamName";
+    $teamVerify = $db->prepare($sqlCheckTeam);
+    $teamVerify->bindParam(":teamName", $teamName);
+    $teamVerify->execute([
+        ':teamName' => $teamName
+    ]);
+
+    $teamExist = $teamVerify->rowCount();
+
+    if ($teamExist) {
+        $message = "Team name already exists, choose a different team name.";
+        header("location: register.php?msg=$message");
+        exit;
+    } else {
+
+        $sqlCreateTeam = "INSERT INTO teams (teamName, teamValue, teamUserId )
+                              VALUES (:teamName, :teamPlayers, :ownerId)";
+
+        $prepareTeamCreate = $db->prepare($sqlCreateTeam);
+        $prepareTeamCreate->execute([
+            ':teamName' => $teamName,
+            ':teamPlayers' => $teamPlayers,
+            ':ownerId' => $id
+        ]);
+
+        $message = "Team has been succesfully made!";
+        header("location: index.php?msg=$message");
+    }
+    exit;
 }
