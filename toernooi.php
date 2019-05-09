@@ -9,10 +9,7 @@ require "header.php";
 
 require 'config.php';
 
-if ( !isset( $_SESSION['sID'] ) ) {
-    header('location: index.php');
-    exit;
-}
+
 ?>
 
 <body>
