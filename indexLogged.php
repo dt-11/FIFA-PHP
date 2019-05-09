@@ -9,25 +9,9 @@ if ( !isset( $_SESSION['sID'] ) ) {
 }
 
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Homepage FIFA</title>
-</head>
-
-<body>
-
-<main>
-
-    <ul>
-        <li><a class="active" href="indexLogged.php">Home</a></li>
-        <li><a href="createTeam.php">team-aanmaken</a></li>
-        <li><a href="teamOverview.php">overview</a></li>
-        <li><a href="download.php">download</a></li>
-        <li><a href="toernooi.php">toernooi</a></li>
-        <li><a href="teamEdit.php">team aanpassen</a></li>
-        <li><a href="logout.php">logout</a></li>
-    </ul>
+<div class="login_container">
+    <h2>Home</h2>
+</div>
 
 </main>
 

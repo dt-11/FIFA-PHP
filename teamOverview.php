@@ -8,24 +8,9 @@
 require "header.php";
 
 require 'config.php';
-
-if ( !isset( $_SESSION['sID'] ) ) {
-    header('location: index.php');
-    exit;
-}
 ?>
 
 <body>
-
-<ul>
-    <li><a href="indexLogged.php">Home</a></li>
-    <li><a href="createTeam.php">team-aanmaken</a></li>
-    <li><a class="active" href="teamOverview.php">overview</a></li>
-    <li><a href="download.php">download</a></li>
-    <li><a href="toernooi.php">toernooi</a></li>
-    <li><a href="teamEdit.php">team aanpassen</a></li>
-    S
-</ul>
 
 <h2>Team Overzicht</h2>
     <div class="overzicht">

@@ -8,7 +8,6 @@
 require "header.php";
 
 require "config.php";
-
 if ( !isset( $_SESSION['sID'] ) ) {
     header('location: index.php');
     exit;
@@ -16,16 +15,6 @@ if ( !isset( $_SESSION['sID'] ) ) {
 ?>
 
 <body>
-
-        <ul>
-            <li><a href="indexLogged.php">Home</a></li>
-            <li><a href="createTeam.php">team-aanmaken</a></li>
-            <li><a href="teamOverview.php">overview</a></li>
-            <li><a href="download.php">download</a></li>
-            <li><a href="toernooi.php">toernooi</a></li>
-            <li><a class="active" href="teamEdit.php">team aanpassen</a></li>
-            <li><a href="logout.php">logout</a></li>
-        </ul>
 
         <h2>Team Overzicht</h2>
 

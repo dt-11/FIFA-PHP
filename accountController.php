@@ -70,8 +70,16 @@ if ($_POST ['type'] == 'login'){
             $message = "Welcome $userName !";
             session_start();
             $_SESSION['sID'] = session_id();
-            header("location: indexLogged.php?msg=$message");
-            exit;
+            if($row['isAdmin'] == 1){
+                $_SESSION['adminID'] = true;
+                header("location: indexLogged.php?msg=$message");
+                exit;
+            }
+            else{
+                header("location: indexLogged.php?msg=$message");
+                exit;
+            }
+
         }
         else{
             $message = "Password or username does not match";

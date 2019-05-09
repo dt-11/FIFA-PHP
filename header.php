@@ -6,15 +6,7 @@
  * Time: 11:51
  */
 
-//re
-//if ($_SESSION['sId'] == session_id()){
-//    session_start();
-//}
-//else{
-//    session_destroy();
-//}
-
-
+session_start();
 ?>
 
 <!doctype html>
@@ -31,6 +23,43 @@
     <div class="header">
         <h1>Fifa</h1>
     </div>
+    <?php
+        //als je bent ingelogd als admin
+        if(isset($_SESSION['adminID'])){
+            echo"<ul>
+                        <li><a href=\"indexLogged.php\">Home</a></li>
+                        <li><a href=\"createTeam.php\">team-aanmaken</a></li>
+                        <li><a href=\"teamOverview.php\">overview</a></li>
+                        <li><a href=\"download.php\">download</a></li>
+                        <li><a href=\"toernooi.php\">toernooi</a></li>
+                        <li><a href=\"teamEdit.php\">team aanpassen</a></li>
+                        <li><a href=>admin page</a></li>
+                        <li><a href=\"logout.php\">logout</a></li>
+                       </ul>";
+        }
+        //als je bent ingelogd
+        else if(isset($_SESSION['sID'])){
+                echo"<ul>
+                        <li><a href=\"indexLogged.php\">Home</a></li>
+                        <li><a href=\"createTeam.php\">team-aanmaken</a></li>
+                        <li><a href=\"teamOverview.php\">overview</a></li>
+                        <li><a href=\"download.php\">download</a></li>
+                        <li><a href=\"toernooi.php\">toernooi</a></li>
+                        <li><a href=\"teamEdit.php\">team aanpassen</a></li>
+                        <li><a href=\"logout.php\">logout</a></li>
+                       </ul>";
+        }
+        //als je uitgelogd of niet ingelogd bent
+        else{
+            echo "<ul>
+                    <li><a href=\"index.php\">Home</a></li>
+                    <li><a href=\"teamOverview.php\">overview</a></li>
+                    <li><a href=\"toernooi.php\">toernooi</a></li>
+                    <li><a href=\"login.php\">login</a></li>
+                    <li><a href=\"register.php\">registreren</a></li>
+                </ul>";
+        }
+    ?>
 </header>
 
 <style>
@@ -82,9 +111,9 @@
         background-color: #111;
     }
 
-    .active {
-        background-color: #4CAF50;
-    }
+    /*.active {*/
+        /*background-color: #4CAF50;*/
+    /*}*/
 
 </style>
 

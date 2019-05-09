@@ -16,15 +16,6 @@ if ( !isset( $_SESSION['sID'] ) ) {
 ?>
 
 <body>
-    <ul>
-        <li><a href="indexLogged.php">Home</a></li>
-        <li><a href="createTeam.php">team-aanmaken</a></li>
-        <li><a href="teamOverview.php">overview</a></li>
-        <li><a class="active" href="download.php">download</a></li>
-        <li><a href="toernooi.php">toernooi</a></li>
-        <li><a href="teamEdit.php">team aanpassen</a></li>
-        <li><a href="logout.php">logout</a></li>
-    </ul>
 
     <div class="download">
         <div class="tekst">
