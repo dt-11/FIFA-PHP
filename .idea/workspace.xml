@@ -63,15 +63,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/xampp/htdocs/toets_php_mysql-grebber_youssri_de/php/controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://C:/xampp/htdocs/fifa/php/accountController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="867">
@@ -80,17 +71,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/xampp/htdocs/fifa/php/createTeam.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://C:/xampp/htdocs/fifa/php/teamEdit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="119">
+              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://C:/xampp/htdocs/fifa/php/createTeamController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/xampp/htdocs/fifa/php/createTeam.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/xampp/htdocs/fifa/php/teamController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="714">
               <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
@@ -185,12 +185,12 @@
       <workItem from="1555569790884" duration="9844000" />
       <workItem from="1557124709242" duration="7328000" />
       <workItem from="1557383638581" duration="12709000" />
-      <workItem from="1557419906902" duration="7423000" />
+      <workItem from="1557419906902" duration="7697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51235000" />
+    <option name="totallyTimeSpent" value="51509000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -380,13 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/xampp/htdocs/fifa/php/teamEdit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/xampp/htdocs/fifa/php/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -475,9 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/change-team-controller.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/createTeam.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -488,17 +478,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/xampp/htdocs/fifa/php/createTeam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-        </state>
-      </provider>
+    <entry file="file://$USER_HOME$/Desktop/change-team-controller.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://C:/xampp/htdocs/fifa/php/createTeamController.php">
+    <entry file="file://C:/xampp/htdocs/fifa/php/teamController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/xampp/htdocs/fifa/php/createTeam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/xampp/htdocs/fifa/php/teamEdit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
         </state>
       </provider>
     </entry>

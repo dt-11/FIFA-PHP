@@ -8,6 +8,11 @@
 require "header.php";
 
 require 'config.php';
+
+$sql = "SELECT * FROM teams";
+
+$query = $db->query($sql);
+$teams = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <body>
@@ -15,13 +20,12 @@ require 'config.php';
 <h2>Team Overzicht</h2>
     <div class="overzicht">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <?php
+            foreach ($teams as $team){
+                $teamName = htmlentities($team['teamName']);
+                echo "<li>$teamName</li>";
+            }
+        ?>
         </ul>
     </div>
 
