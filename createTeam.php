@@ -18,7 +18,7 @@ if ( !isset( $_SESSION['sID'] ) ) {
 
 <h2>Team aanmaken</h2>
 
-<form action="accountController.php" method="post">
+<form action="createTeamController.php" method="post">
     <input type="hidden" name="type" value="createTeam">
 
     <div class="form-group">

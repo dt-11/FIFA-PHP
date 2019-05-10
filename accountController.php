@@ -69,7 +69,7 @@ if ($_POST ['type'] == 'login'){
         if(password_verify($userPassword, $userPasswordUnhash)){
             $message = "Welcome $userName !";
             session_start();
-            $_SESSION['sID'] = session_id();
+            $_SESSION['sID'] = $row['userId'];
             //is de gebruiker een admin? 1=ja - 0=nee
             if($row['isAdmin'] == 1){
                 $_SESSION['adminID'] = true;
@@ -89,47 +89,4 @@ if ($_POST ['type'] == 'login'){
         }
     }
 }
-if ($_POST ['type'] == 'createTeam') {
 
-
-    $teamName = htmlentities(trim($_POST['teamName']));
-    $teamPlayers = htmlentities(trim($_POST['playerValue']));
-    $_SESSION['sID'] = session_id();
-    $id = $_SESSION['sID'];
-
-    $sqlId = "SELECT * FROM users WHERE userId = :id";
-    $prepareId = $db->prepare($sqlId);
-    $prepareId->execute([
-        ':id' => $id
-    ]);
-
-    $sqlCheckTeam = "SELECT * FROM teams WHERE teamName = :teamName";
-    $teamVerify = $db->prepare($sqlCheckTeam);
-    $teamVerify->bindParam(":teamName", $teamName);
-    $teamVerify->execute([
-        ':teamName' => $teamName
-    ]);
-
-    $teamExist = $teamVerify->rowCount();
-
-    if ($teamExist) {
-        $message = "Team name already exists, choose a different team name.";
-        header("location: register.php?msg=$message");
-        exit;
-    } else {
-
-        $sqlCreateTeam = "INSERT INTO teams (teamName, teamValue, teamUserId )
-                              VALUES (:teamName, :teamPlayers, :ownerId)";
-
-        $prepareTeamCreate = $db->prepare($sqlCreateTeam);
-        $prepareTeamCreate->execute([
-            ':teamName' => $teamName,
-            ':teamPlayers' => $teamPlayers,
-            ':ownerId' => $id
-        ]);
-
-        $message = "Team has been succesfully made!";
-        header("location: index.php?msg=$message");
-    }
-    exit;
-}
