@@ -21,21 +21,10 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC);
 <div class="overzicht">
     <ul>
         <?php
-        if(isset($_SESSION['adminID'])) {
             foreach ($teams as $team) {
                 $teamName = htmlentities($team['teamName']);
-                echo "<li>$teamName</li> <form action=\"createTeamController.php\" method=\"post\">
-                                         <input type=\"hidden\" name=\"type\" value=\"delete\">
-                                         <input type=\"submit\" value=\"Delete\">
-        </form>";
+                echo "<li><a href='detail.php'> $teamName</a></li>";
             }
-        }
-        else {
-            foreach ($teams as $team) {
-                $teamName = htmlentities($team['teamName']);
-                echo "<li>$teamName</li>";
-            }
-        }
         ?>
     </ul>
 </div>
