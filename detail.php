@@ -18,6 +18,7 @@ $teamitem = $prepare->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <div class="header">
+    <?php if(isset($_SESSION['adminID'])){?>
     <div class="container">
         <h1>Team: <?php
             echo htmlentities($teamitem['teamName'])
@@ -31,6 +32,15 @@ $teamitem = $prepare->fetch(PDO::FETCH_ASSOC);
         </form>
         <p><a href="edit.php">Edit Team</a></p>
     </div>
+    <?php} else{ ?>
+    <div class="container">
+        <h1>Team: <?php
+            echo htmlentities($teamitem['teamName'])
+            ?></h1>
+        <p>Hoeveelheid spelers: <?php
+            echo htmlentities($teamitem['teamValue'])
+            ?></p>
+    </div>
 </div>
-
+<?php } ?>
 
