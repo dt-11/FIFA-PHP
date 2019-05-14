@@ -11,7 +11,7 @@ session_start();
 
 if ($_POST['type']== 'delete'){
     $id = $_SESSION['sID'];
-    $sqlDelete = "DELETE FROM teams WHERE teamUserId = :id";
+    $sqlDelete = "DELETE FROM teams WHERE teamId = :id";
     $prepareDelete = $db->prepare($sqlDelete);
     $prepareDelete->execute([
         ':id' => $id
@@ -25,7 +25,7 @@ if ($_POST['type']=='edit') {
     $sql = "UPDATE teams SET
             teamName = :teamname,
             teamValue = :teamvalue
-        WHERE teamUserId = :id
+        WHERE teamId = :id
         ";
 
     $prepare = $db->prepare($sql);

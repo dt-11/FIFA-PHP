@@ -1,8 +1,8 @@
 <?php
 require 'config.php';
 require 'header.php';
-$id = $_SESSION['sID'];
-$sql = "SELECT * FROM teams WHERE teamUserId = :id";
+$id = $_GET['id'];
+$sql = "SELECT * FROM teams WHERE teamId = :id";
 $prepare = $db->prepare($sql);
 $prepare->execute([
 ':id' => $id
@@ -11,7 +11,7 @@ $teamitem = $prepare->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <h1>Edit Manga</h1>
-<form action="createTeamController.php" method="post">
+<form action="createTeamController.php?id=<?=$id;?>" method="post">
     <input type="hidden" name="type" value="edit">
     <div class="from-class">
         <label for="teamName">Team naam</label>

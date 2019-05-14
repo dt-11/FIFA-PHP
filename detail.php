@@ -8,8 +8,8 @@
 require 'config.php';
 require 'header.php';
 
-$id = $_SESSION['sID'];
-$sql = "SELECT * FROM teams WHERE teamUserId = :id";
+$id = $_GET['id'];
+$sql = "SELECT * FROM teams WHERE teamId = :id";
 $prepare = $db->prepare($sql);
 $prepare->execute([
     ':id' => $id
@@ -25,7 +25,7 @@ $teamitem = $prepare->fetch(PDO::FETCH_ASSOC);
         <p>Hoeveelheid spelers: <?php
             echo htmlentities($teamitem['teamValue'])
             ?></p>
-        <form action="createTeamController.php" method="post">
+        <form action="createTeamController.php?id=<?=$id;?>" method="post">
             <input type="hidden" name="type" value="delete">
             <input type="submit" value="Delete">
         </form>
