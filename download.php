@@ -25,7 +25,10 @@ if ( !isset( $_SESSION['sID'] ) ) {
             <img src="img/visualstudio.png" alt="">
         </div>
         <div class="button">
-            <button>Klik hier om te downloaden</button>
+            <a href="C#/FIFA-Gokkers.zip"
+                <button>Klik hier om te downloaden</button>
+            </a>
+<!--            Download moet .exe-->
         </div>
     </div>
 </body>
