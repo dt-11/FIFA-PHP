@@ -11,6 +11,7 @@ if ( !isset( $_SESSION['sID'] ) ) {
 ?>
 <div class="login_container">
     <h2>Home</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus et labore maiores nulla placeat voluptatem. Animi inventore neque reiciendis? Ab dignissimos dolor impedit iste magni maiores porro tempore voluptatum.</p>
 </div>
 
 </main>
