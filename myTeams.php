@@ -9,7 +9,7 @@ require 'header.php';
 ?>
     <main>
         <div class="container">
-
+            <a href="addPlayer.php">Voeg Speler toe aan team</a>
         </div>
     </main>
 <?php

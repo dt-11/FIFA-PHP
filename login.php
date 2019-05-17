@@ -2,35 +2,33 @@
 /**
  * Created by PhpStorm.
  * User: User
- * Date: 15-4-2019
- * Time: 10:51
+ * Date: 10-5-2019
+ * Time: 12:48
  */
-    require "header.php"
+require 'header.php';
 ?>
+    <main>
+        <div class="container">
+			<h2>Inloggen</h2>
 
-<body>
+			<form action="accountController.php" method="post">
+			    <input type="hidden" name="type" value="login">
+			    <div class="form-group">
+			        <label for="userName">Gebruikersnaam</label>
+			        <input type="text" name="userName" id="userName">
+			    </div>
 
-<h2>Inloggen</h2>
+			    <div class="form-group">
+			        <label for="userPassword">Wachtwoord</label>
+			        <input type="password" name="userPassword" id="userPassword">
+			    </div>
 
-<form action="accountController.php" method="post">
-    <input type="hidden" name="type" value="login">
-    <div class="form-group">
-        <label for="userName">Username</label>
-        <input type="text" name="userName" id="userName">
-    </div>
+			    <input class="login btn" type="submit" value="Login">
+				<p>Heb je nog geen account?<a href="register.php">Klik hier</a> om je te registreren!</p>
 
-    <div class="form-group">
-        <label for="userPassword">Password</label>
-        <input type="password" name="userPassword" id="userPassword">
-    </div>
-
-    <input type="submit" value="Login">
-    <p> <p>Heb je nog geen account?<a href="register.php">Klik hier</a> om je te registreren</p>
-
-    </form>
-</body>
-
-
-
-
-
+			</form>
+        </div>
+    </main>
+<?php
+require 'footer.php';
+?>

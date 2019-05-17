@@ -1,17 +1,11 @@
 <?php
-require "header.php"
+require 'header.php';
 ?>
+    <main>
+        <div class="container">
 
-<body>
-
-<main>
-
-    <div class="login_container">
-        <h2>Home</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi consequuntur, dolorum facere labore magni odio tenetur! Animi eum fuga, fugit laboriosam modi odio.</p>
-    </div>
-</main>
-
-</body>
-
-
+        </div>
+    </main>
+<?php
+require 'footer.php';
+?>
