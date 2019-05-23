@@ -1,0 +1,215 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h2{
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+}
+/*header*/
+
+.navbar{
+    background-color: #4CAF50;
+    margin: 20px 0;
+}
+
+.navbar .container{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.navbar ul{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.navbar li{
+	list-style: none;
+	border-left: 0.1px solid #000;
+    border-right: 0.1px solid #000;
+    padding: 7.5px 5px;
+}
+
+.navbar a{
+	font-size: 20px;
+    color: #000;
+    margin: 0 5px;
+    align-content: center; 
+}
+
+.navbar li:hover{
+	background-color: #357a38;
+}
+
+.navbar li:first-child{
+	border-left: none;
+}
+
+.navbar li:last-child{
+	border-right: none;
+}
+
+/*header*/
+
+
+
+/*Forms*/
+
+.form-group{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	margin: 25px 0;
+}
+
+.form-group label{
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.form-group input{
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+.btn{
+	display: block;
+	margin: 0 auto;
+	border: 1px solid #000;
+	border-radius: 12px;
+/*	padding: 0 5px;*/
+	background-color: #fff;
+}
+
+.reg{
+	width: 85px;
+	height: 25px;
+}
+
+.login{
+	width: 75px;
+	height: 25px;
+}
+
+/*Forms*/
+
+
+
+/*Team overview*/
+
+.teams{
+	border: 1px solid #000;
+	border-radius: 12px;
+	display: grid;
+	grid-template-columns: 85% 15%;
+}
+
+.teams-normal{
+	display: grid;
+	border: 1px solid #000;
+	border-radius: 12px;
+}
+
+.teams form{
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.teams form:last-child{
+	border-bottom: none;
+}
+
+.team{
+	padding: 12.5px 7.5px;
+	border-bottom: 1px solid #000;
+}
+
+.teams .team:last-child{
+	border-bottom: none;
+}
+
+.delete-btn{
+	display: block;
+	margin: auto;
+	width: 75%;
+	height: 100%;
+	background-color: #fff;
+	border: none;
+
+	font-size: 16px;
+}
+
+/*Team overview*/
+
+/*My teams*/
+
+.my-teams a{
+	color: #000;
+}
+
+.my-teams ul{
+	margin: 25px 0;
+}
+
+/*My teams*/
+
+
+/*Admin CP*/
+.admin-cp{
+	display: grid;
+	grid-template-columns: 75% 25%;
+	background: aquamarine;
+}
+/*Admin CP*/
+
+
+/*Match overview*/
+.match-overview{
+	display: flex;
+	flex-direction: column;
+	border: solid 1px;
+}
+
+.match{
+	padding: 12.5px 7.5px;
+	border-bottom: 1px solid #000;
+	text-align: center;
+}
+
+.match:last-child{
+	border-bottom: none;
+}
+
+
+/*Download*/
+.placeholder{
+	border: solid 1px;
+	height: 200px;
+	margin: 25px 0;
+}
+
+.download-btn{
+	width: 150px;
+	border: solid 1px;
+
+}
