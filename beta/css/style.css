@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+	font-family: Roboto;
 }
 
 .container{
@@ -8,18 +9,35 @@
     margin: 0 auto;
 }
 
-h2{
+h1, h2{
 	text-align: center;
 }
 
 a{
 	text-decoration: none;
 }
+
+body{
+	background-image: url("../img/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+footer{
+	margin-top: 100px;
+}
 /*header*/
 
+.title{
+	background: rgba(76,150,80, 0.5);
+	padding: 20px 0;
+}
+
 .navbar{
-    background-color: #4CAF50;
-    margin: 20px 0;
+    background: rgba(76,175,80, 0.8) ;
+    margin-bottom: 20px;
 }
 
 .navbar .container{
@@ -71,6 +89,10 @@ a{
 
 /*Forms*/
 
+.no-account p{
+	text-align: center;
+}
+
 .form-group{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -90,6 +112,7 @@ a{
 .form-group input{
 	max-width: 250px;
 	margin: 0 auto;
+	background: rgba(255,255,255,0.5)
 }
 
 .btn{
@@ -122,12 +145,14 @@ a{
 	border-radius: 12px;
 	display: grid;
 	grid-template-columns: 85% 15%;
+	background: rgba(255,255,255,0.5)
 }
 
 .teams-normal{
 	display: grid;
 	border: 1px solid #000;
 	border-radius: 12px;
+	background: rgba(255,255,255,0.5)
 }
 
 .teams form{
@@ -141,11 +166,7 @@ a{
 
 .team{
 	padding: 12.5px 7.5px;
-	border-bottom: 1px solid #000;
-}
 
-.teams .team:last-child{
-	border-bottom: none;
 }
 
 .delete-btn{
@@ -153,9 +174,8 @@ a{
 	margin: auto;
 	width: 75%;
 	height: 100%;
-	background-color: #fff;
+	background: none;
 	border: none;
-
 	font-size: 16px;
 }
 
@@ -178,7 +198,6 @@ a{
 .admin-cp{
 	display: grid;
 	grid-template-columns: 75% 25%;
-	background: aquamarine;
 }
 /*Admin CP*/
 
@@ -188,6 +207,24 @@ a{
 	display: flex;
 	flex-direction: column;
 	border: solid 1px;
+	border-radius: 12px;
+	background: rgba(255,255,255,0.5);
+}
+
+.match-admin{
+	display: flex;
+	justify-content: space-between;
+	padding: 12.5px 7.5px;
+	border-bottom: 1px solid #000;
+	text-align: center;
+}
+
+.match-admin p{
+	margin: auto 0;
+}
+
+.match-admin:last-child{
+	border-bottom: none;
 }
 
 .match{
@@ -196,10 +233,18 @@ a{
 	text-align: center;
 }
 
+.match p{
+	font-size: 20px;
+}
+
 .match:last-child{
 	border-bottom: none;
 }
 
+.score-btn{
+	padding: 5px 7.5px;
+	border: none;
+}
 
 /*Download*/
 .placeholder{
@@ -212,4 +257,23 @@ a{
 	width: 150px;
 	border: solid 1px;
 
+}
+
+
+/*Score*/
+.end-scores{
+	display: flex;
+	justify-content: space-around;
+	border: solid 1px;
+	border-radius: 12px;
+	background: rgba(255,255,255,0.5);
+}
+
+.end-score label{
+	text-align: center;
+}
+
+.end-score{
+	display: flex;
+	flex-direction: column;
 }

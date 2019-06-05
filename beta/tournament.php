@@ -3,9 +3,13 @@ require 'header.php';
 
 require 'config.php';
 
-$sql = "SELECT * FROM matches";
+$sqlGetTourmaent = "SELECT matches.matchId, tA.teamName AS teamA, tB.teamName AS teamB FROM matches
+        INNER JOIN teams tA
+        ON matches.teamAId = tA.teamid
+        INNER JOIN teams tB
+        ON matches.teamBId = tB.teamId";
 
-$query = $db->query($sql);
+$query = $db->query($sqlGetTourmaent);
 
 $matches = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -15,10 +19,22 @@ $matches = $query->fetchAll(PDO::FETCH_ASSOC);
             <h2>Wedstrijd schema</h2>
             <div class="match-overview">
                 <?php
-                foreach ($matches as $match){
-                    $teamA = $match['teamAId'];
-                    $teamB = $match['teamBId'];
-                    echo "<div class='match'>$teamA - $teamB</div>";
+                if (isset($_SESSION['adminID'])){
+                    foreach ($matches as $match){
+                        $teamA = $match['teamA'];
+                        $teamB = $match['teamB'];
+                        echo "<div class='match-admin'>
+                                <p>$teamA - $teamB</p>
+                                    <a href='./score.php?id={$match['matchId']}' class='score-btn'>Voer score in</a>
+                              </div>";
+                    }
+                }
+                else{
+                    foreach ($matches as $match){
+                        $teamA = $match['teamA'];
+                        $teamB = $match['teamB'];
+                        echo "<div class='match'><p>$teamA - $teamB</p></div>";
+                    }
                 }
                 ?>
             </div>
@@ -27,3 +43,5 @@ $matches = $query->fetchAll(PDO::FETCH_ASSOC);
 <?php
 require 'footer.php';
 ?>
+
+

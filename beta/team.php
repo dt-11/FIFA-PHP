@@ -8,25 +8,27 @@
 require 'header.php';
 require 'config.php';
 
-$id = $_GET['teamId'];
+$id = $_GET['id'];
 
-$sql = "SELECT * FROM teams WHERE teamId = :teamId";
+$sql = "SELECT * FROM `teams` WHERE teamId = :id";
 
 $prepare = $db->prepare($sql);
 $prepare->execute([
-    ':teamId' => $id
+    ':id' => $id
 ]);
 $team = $prepare->fetch(PDO::FETCH_ASSOC);
 
-var_dump($team);
-//?>
-<!---->
-<!--    <main>-->
-<!--        <div class="container">-->
-<!--            <h3>--><?php //echo $team['teamName'];?><!--</h3>-->
-<!--        </div>-->
-<!--    </main>-->
-<!---->
+?>
+
+    <main>
+        <div class="container">
+            <h3><?php echo $team['teamName'];?></h3>
+            <?php
+                echo "<a href='./editTeam.php?id={$team['teamId']}'>Bewerk dit team</a>";
+            ?>
+        </div>
+    </main>
+
 <?php
-//require 'footer.php';
-//?>
+require 'footer.php';
+?>

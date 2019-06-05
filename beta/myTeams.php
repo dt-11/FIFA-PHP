@@ -22,7 +22,6 @@ $teams = $prepare->fetchAll(PDO::FETCH_ASSOC);
 ?>
     <main>
         <div class="container">
-            <a href="">Voeg Speler toe aan team</a>
             <div class="my-teams">
                 <ul>
                     <?php

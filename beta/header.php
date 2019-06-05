@@ -21,6 +21,9 @@ session_start();
 
 <body>
     <header>
+        <div class="title">
+            <h1>FIFA Voetbal Toernooi</h1>
+        </div>
         <div class="navbar">
             <div class="container">
                 <?php
@@ -60,7 +63,6 @@ session_start();
                     </div> 
                     <div>
                         <ul>
-                            <li><a href=\"myTeams.php\">Mijn teams</a></li>
                             <li><a href=\"logout.php\">Loguit</a></li>
                         </ul>
                     </div> 

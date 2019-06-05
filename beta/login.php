@@ -24,7 +24,11 @@ require 'header.php';
 			    </div>
 
 			    <input class="login btn" type="submit" value="Login">
-				<p>Heb je nog geen account?<a href="register.php">Klik hier</a> om je te registreren!</p>
+
+				<div class="no-account">
+					<p>Heb je nog geen account?</p>
+					<p><a href="register.php">Klik hier</a> om je te registreren!</p>
+				</div>
 
 			</form>
         </div>
