@@ -70,12 +70,36 @@ if ($_POST['type'] == 'createTeam') {
 }
 
 if ($_POST['type'] == 'score'){
-    $sql = "SELECT teamAId, teamBId FROM matches";
-    $query = $db->query($sql);
-    $teams = $query->fetch(PDO::FETCH_ASSOC);
-
-    $sql
     $id = $_GET['id'];
+
+    $sql = "SELECT teamAId, teamBId FROM matches
+            WHERE matchId = :id";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':id' => $id
+    ]);
+    $teamIds = $prepare->fetch(PDO::FETCH_ASSOC);
+    $teamAId = $teamIds['teamAId'];
+    $teamBId = $teamIds['teamBId'];
+
+
+    $sqlTeamA = "SELECT * FROM teams
+                     WHERE teamId = :teamAId";
+    $prepareTeamA = $db->prepare($sqlTeamA);
+    $prepareTeamA->execute([
+        ':teamAId' => $teamAId,
+    ]);
+    $teamA = $prepareTeamA->fetch(PDO::FETCH_ASSOC);
+
+
+    $sqlTeamB = "SELECT * FROM teams
+                     WHERE teamId = :teamBId";
+    $prepareTeamB = $db->prepare($sqlTeamB);
+    $prepareTeamB->execute([
+        ':teamBId' => $teamBId,
+    ]);
+    $teamB = $prepareTeamB->fetch(PDO::FETCH_ASSOC);
+
 
     $teamAScore = trim($_POST['teamAScore']);
 	$teamBScore = trim($_POST['teamBScore']);
@@ -84,70 +108,170 @@ if ($_POST['type'] == 'score'){
 		header("Location: {$_SERVER['HTTP_REFERER']}");
         exit;
 	}
-
 	else{
 
-        $previousScoreInt = (int) $teams['teamGoals'];
-        $newScoreInt = (int) $teamBScore;
+	    if (isset($teamA['teamGoals']) == 0){
+            $updateGoals = "UPDATE teams SET
+                            teamGoals = :teamGoals
+                            WHERE teamId = :teamId";
+            $prepareUpdateGoals  = $db->prepare($updateGoals);
+            $prepareUpdateGoals->execute([
+                ':teamId'    => $teamAId,
+                ':teamGoals' => $teamAScore
+            ]);
+            header("location: admin.php");
+            exit;
+        }
+	    else{
+            $previousScoreInt = (int) $teamA['teamGoals'];
+            $newScoreInt = (int) $teamAScore;
 
-        $newScore = $previousScoreInt + $newScoreInt;
-        echo $newScore;
-//		$sqlScoreMatch = "UPDATE matches SET
-//                      teamAScore = :teamAScore,
-//                      teamBScore = :teamBScore
-//                      WHERE matchId = :id";
-//        $prepareScoreMatch = $db->prepare($sqlScoreMatch);
-//        $prepareScoreMatch->bindParam(':id', $id);
-//        $prepareScoreMatch->execute([
-//                'id'    => $id,
-//                ':teamAScore' => $teamAScore,
-//                ':teamBScore' => $teamBScore
-//        ]);
-//
-//        if(!isset()) {
-//
-//        }
-//        else{
-//            $updateGoals = "UPDATE teams SET
-//                          teamGoals = :teamGoals
-//                          WHERE teamId = :teamId";
-//            $previousScoreInt = (int) $team['teamGoals'];
-//            $newScoreInt = (int) $teamBScore;
-//
-//            $newScore = $previousScoreInt + $newScoreInt;
-//        }
+            $newScore = $previousScoreInt + $newScoreInt;
+
+            $updateGoals = "UPDATE teams SET
+                            teamGoals = :teamGoals
+                            WHERE teamId = :teamId";
+            $prepareUpdateGoals  = $db->prepare($updateGoals);
+            $prepareUpdateGoals->execute([
+                ':teamId'    => $teamAId,
+                ':teamGoals' => $newScore
+            ]);
+        }
+        if (isset($teamB['teamGoals']) == 0){
+            $updateGoals = "UPDATE teams SET
+                            teamGoals = :teamGoals
+                            WHERE teamId = :teamId";
+            $prepareUpdateGoals  = $db->prepare($updateGoals);
+            $prepareUpdateGoals->execute([
+                ':teamId'    => $teamBId,
+                ':teamGoals' => $teamBScore
+            ]);
+            header("location: admin.php");
+            exit;
+        }
+        else{
+            $previousScoreInt = (int) $teamB['teamGoals'];
+            $newScoreInt = (int) $teamBScore;
+
+            $newScore = $previousScoreInt + $newScoreInt;
+
+            $updateGoals = "UPDATE teams SET
+                            teamGoals = :teamGoals
+                            WHERE teamId = :teamId";
+            $prepareUpdateGoals  = $db->prepare($updateGoals);
+            $prepareUpdateGoals->execute([
+                ':teamId'    => $teamBId,
+                ':teamGoals' => $newScore
+            ]);
+            header("location: admin.php");
+        }
 
 
-        //Dit werkt! VVVVVVVVVVVV
-//        if ($teamAScore > $teamBScore) {
-//
-//            $sqlTeamA = "UPDATE teams SET
-//                          teamScore = 3
-//                          WHERE teamId = :teamId";
-//            $prepareTeamA = $db->prepare($sqlTeamA);
-//            $prepareTeamA->execute([
-//                ':teamId' => $team['teamId']
-//            ]);
-//                echo "Team A heeft gewonnen!";
-//                exit;
-//
-//        }
+
+        if ($teamAScore > $teamBScore) {
+            if (isset($teamA['teamScore']) == 0){
+                $updateScore = "UPDATE teams SET
+                          teamScore = 3
+                          WHERE teamId = :teamId";
+                $prepareUpdateScore = $db->prepare($updateScore);
+                $prepareUpdateScore->execute([
+                    ':teamId' => $teamAId
+                ]);
+                exit;
+            }
+            if (isset($teamA['teamScore']) > 0){
+                $oldPoints = (int) $teamA['teamScore'];
+                $newPoints = $oldPoints + 3;
+
+                $updateScore = "UPDATE teams SET
+                          teamScore = :teamScore
+                          WHERE teamId = :teamId";
+                $prepareUpdateScore = $db->prepare($updateScore);
+                $prepareUpdateScore->execute([
+                    ':teamId'    => $teamAId,
+                    ':teamScore' => $newPoints
+                ]);
+                exit;
+            }
+        }
 
 
-//        else if ($teamAScore < $teamBScore) {
-////            $sqlTeamB = "INSERT INTO teams (teamScore)
-////                            VALUES(3)
-////                            WHERE teamId";
-//            echo "Team B heeft gewonnen!";
-//        }
-//        else if($teamAScore === $teamBScore){
-////            $sqlTeamA = "INSERT INTO teams (teamScore)
-////                            VALUES(1)
-////                            WHERE teamId";
-////            $sqlTeamB = "INSERT INTO teams (teamScore)
-////                            VALUES(1)
-////                            WHERE teamId";
-//            echo "Gelijk spel!";
-//        }
+
+        if ($teamAScore < $teamBScore) {
+            if (isset($teamB['teamScore']) == 0){
+                $updateScore = "UPDATE teams SET
+                          teamScore = 3
+                          WHERE teamId = :teamId";
+                $prepareUpdateScore = $db->prepare($updateScore);
+                $prepareUpdateScore->execute([
+                    ':teamId' => $teamBId
+                ]);
+                exit;
+            }
+            if (isset($teamB['teamScore']) > 0){
+                $oldPoints = (int) $teamB['teamScore'];
+                $newPoints = $oldPoints + 3;
+
+                $updateScore = "UPDATE teams SET
+                          teamScore = :teamScore
+                          WHERE teamId = :teamId";
+                $prepareUpdateScore = $db->prepare($updateScore);
+                $prepareUpdateScore->execute([
+                    ':teamId'    => $teamBId,
+                    ':teamScore' => $newPoints
+                ]);
+                exit;
+            }
+        }
+
+        if($teamAScore === $teamBScore) {
+            if (isset($teamA['teamScore']) == 0){
+                $updateScore = "UPDATE teams SET
+                          teamScore = 1
+                          WHERE teamId = :teamId";
+                $prepareUpdateScore = $db->prepare($updateScore);
+                $prepareUpdateScore->execute([
+                    ':teamId' => $teamAId
+                ]);
+            }
+            if(isset($teamA['teamScore']) > 0){
+                $oldPointsA = (int) $teamA['teamScore'];
+                $newPointsA = $oldPointsA + 1;
+
+                $updateScoreTeamA = "UPDATE teams SET
+                          teamScore = :teamScore
+                          WHERE teamId = :teamId";
+                $prepareUpdateScoreTeamA = $db->prepare($updateScoreTeamA);
+                $prepareUpdateScoreTeamA->execute([
+                    ':teamId'    => $teamAId,
+                    ':teamScore' => $newPointsA
+                ]);
+            }
+
+            if (isset($teamB['teamScore']) == 0){
+                $updateScore = "UPDATE teams SET
+                          teamScore = 1
+                          WHERE teamId = :teamId";
+                $prepareUpdateScore = $db->prepare($updateScore);
+                $prepareUpdateScore->execute([
+                    ':teamId' => $teamBId
+                ]);
+            }
+            if (isset($teamB['teamScore']) > 0){
+                $oldPointsB = (int) $teamB['teamScore'];
+                $newPointsB = $oldPointsB + 1;
+
+                $updateScoreTeamB = "UPDATE teams SET
+                          teamScore = :teamScore
+                          WHERE teamId = :teamId";
+                $prepareUpdateScoreTeamB = $db->prepare($updateScoreTeamB);
+                $prepareUpdateScoreTeamB->execute([
+                    ':teamId'    => $teamBId,
+                    ':teamScore' => $newPointsB
+                ]);
+                header("location: tournament.php");
+                exit;
+            }
+        }
 	}
 }

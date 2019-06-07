@@ -4,6 +4,10 @@
 	font-family: Roboto;
 }
 
+pre{
+	background-color: #ffffff;
+}
+
 .container{
     max-width: 960px;
     margin: 0 auto;
@@ -254,9 +258,11 @@ footer{
 }
 
 .download-btn{
+	display: block;
 	width: 150px;
 	border: solid 1px;
-
+	margin: 0 auto;
+	padding: 5px 7.5px;
 }
 
 
