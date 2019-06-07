@@ -1,27 +1,48 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Charlotte van Oers
- * Date: 17-5-2019
- * Time: 09:12
+ * User: Gebruiker
+ * Date: 10-5-2019
+ * Time: 12:08
  */
 require 'config.php';
-$id = $_GET ['id'];
-$sql = "SELECT * FROM users WHERE userId = :id ";
-$prepare = $query = $db->prepare($sql);
+require 'header.php';
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM teams WHERE teamId = :id";
+$prepare = $db->prepare($sql);
 $prepare->execute([
     ':id' => $id
 ]);
-$user=$prepare->fetch(PDO::FETCH_ASSOC);
-?>
+$teamitem = $prepare->fetch(PDO::FETCH_ASSOC);
 
-<h1>voeg <?php echo $user['userName'] ?> aan een team toe</h1>
 
-<form action="playerController.php?id=<?=$id?>" method="post">
-    <input type="hidden" name="type" value="update">
-    <div class="form-group">
-        <label  for="userTeam">Team naam veranderen</label>
-        <input type="text" name="userTeam" value="<?=htmlentities($user['userTeam'])?>">
+if(isset($_SESSION['adminID'])){?>
+<div class="header">
+    <div class="container">
+        <h1>Team: <?php
+            echo htmlentities($teamitem['teamName'])
+            ?></h1>
+        <p>Hoeveelheid spelers: <?php
+            echo htmlentities($teamitem['teamValue'])
+            ?></p>
+        <form action="createTeamController.php<?=$id;?>" method="post">
+            <input type="hidden" name="type" value="delete">
+            <input type="submit" value="Delete">
+        </form>
+        <p><a href="edit.php">Edit Team</a></p>
     </div>
-    <input type="submit" value="update">
-</form>
+</div>
+<?php }
+else{ ?>
+<div class="header">
+    <div class="container">
+        <h1>Team: <?php
+            echo htmlentities($teamitem['teamName'])
+            ?></h1>
+        <p>Hoeveelheid spelers: <?php
+            echo htmlentities($teamitem['teamValue'])
+            ?></p>
+
+<?php } ?>
+

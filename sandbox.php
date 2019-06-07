@@ -2,26 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: User
- * Date: 13-5-2019
- * Time: 10:16
+ * Date: 20-5-2019
+ * Time: 10:57
  */
+require "config.php";
 
-require 'config.php';
+$sql = "SELECT * FROM users";
+$query = $db->query($sql);
+$names = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
 
-$sqlGetTeams = "SELECT * FROM teams";
-
-$query = $db->query($sqlGetTeams);
-
-$teamsFetch = $query->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-//$randomizer = rand();
-
-$amountOfTeams = count($teamsFetch);
-
-$amountOfMatches[] = ($amountOfTeams * ($amountOfTeams - 1)) / 2;
-
-echo '<pre>';
-var_dump($amountOfMatches);
-echo '</pre>';
+<select name="" id="">
+    <?php
+        foreach ($names as $name){
+            $userName = $name['userName'];
+            echo "<option>$userName</option>";
+        }
+    ?>
+</select>

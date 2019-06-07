@@ -15,12 +15,15 @@ session_start();
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css" class="css">
+    <link rel="stylesheet" href="./css/style.css" class="css">
     <title>FIFA</title>
 </head>
 
 <body>
     <header>
+        <div class="title">
+            <h1>FIFA Voetbal Toernooi</h1>
+        </div>
         <div class="navbar">
             <div class="container">
                 <?php
@@ -60,7 +63,6 @@ session_start();
                     </div> 
                     <div>
                         <ul>
-                            <li><a href=\"myTeams.php\">Mijn teams</a></li>
                             <li><a href=\"logout.php\">Loguit</a></li>
                         </ul>
                     </div> 

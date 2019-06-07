@@ -12,6 +12,7 @@ if ($_POST ['type'] == 'register'){
     $userName     = htmlentities(trim($_POST['userName']));
     $userPassword = htmlentities(trim($_POST['userPassword']));
     $userEmail    = htmlentities(trim($_POST['userEmail']));
+
     //controlleren of de email al bestaat.
     $sqlCheckEmail = "SELECT * FROM users WHERE userEmail = :userEmail";
     $emailVerify = $db->prepare($sqlCheckEmail);
@@ -19,6 +20,7 @@ if ($_POST ['type'] == 'register'){
     $emailVerify->execute([
         ':userEmail' => $userEmail
     ]);
+
     $emailExist = $emailVerify->rowCount();
     if ($emailExist) {
         $message = "Email already exists, choose a different email.";
@@ -27,6 +29,7 @@ if ($_POST ['type'] == 'register'){
     }
     else{
         $userPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+
         //account is volgens de voorwaarden en word aangemaakt.
         $sqlCreateAccount = "INSERT INTO users (userName, userPassword, userEmail)
                               VALUES (:userName, :userPassword, :userEmail)";
@@ -48,6 +51,7 @@ if ($_POST ['type'] == 'login'){
     $connect = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
     $sqlLogin = "SELECT * FROM users WHERE userName = '".$userName."' ";
     $query = mysqli_query($connect, $sqlLogin);
+
     if(mysqli_num_rows($query) > 0){
         $row = mysqli_fetch_array($query);
         $userPasswordUnhash = $row['userPassword'];
@@ -59,16 +63,19 @@ if ($_POST ['type'] == 'login'){
             if($row['isAdmin'] == 1){
                 $_SESSION['adminID'] = true;
                 header("location: indexLogged.php?msg=$message");
+                $connect->close();
                 exit;
             }
             else{
                 header("location: indexLogged.php?msg=$message");
+                $connect->close();
                 exit;
             }
         }
         else{
             $message = "Password or username does not match";
             header("location: login.php?msg=$message");
+            $connect->close();
             exit;
         }
     }
