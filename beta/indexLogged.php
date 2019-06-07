@@ -6,6 +6,11 @@
  * Time: 12:42
  */
 require 'header.php';
+
+if(!isset($_SESSION['sID'])){
+    header("Location: {$_SERVER['HTTP_REFERER']}");
+    exit;
+}
 ?>
     <main>
         <div class="container">

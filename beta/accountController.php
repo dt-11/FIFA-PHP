@@ -51,6 +51,7 @@ if ($_POST ['type'] == 'login'){
     $connect = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
     $sqlLogin = "SELECT * FROM users WHERE userName = '".$userName."' ";
     $query = mysqli_query($connect, $sqlLogin);
+
     if(mysqli_num_rows($query) > 0){
         $row = mysqli_fetch_array($query);
         $userPasswordUnhash = $row['userPassword'];
@@ -69,7 +70,6 @@ if ($_POST ['type'] == 'login'){
                 header("location: indexLogged.php?msg=$message");
                 $connect->close();
                 exit;
-
             }
         }
         else{

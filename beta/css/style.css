@@ -19,6 +19,7 @@ h1, h2{
 
 a{
 	text-decoration: none;
+	color: #000;
 }
 
 body{
@@ -193,6 +194,12 @@ footer{
 
 .my-teams ul{
 	margin: 25px 0;
+}
+
+.team-options{
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
 }
 
 /*My teams*/

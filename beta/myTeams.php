@@ -19,6 +19,10 @@ $prepare->execute([
 ]);
 $teams = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
+if(!isset($_SESSION['sID'])){
+    header("Location: {$_SERVER['HTTP_REFERER']}");
+    exit;
+}
 ?>
     <main>
         <div class="container">

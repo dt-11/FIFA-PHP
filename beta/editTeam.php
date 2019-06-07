@@ -18,6 +18,10 @@ $prepare->execute([
     ':id' => $id
 ]);
 $team = $prepare->fetch(PDO::FETCH_ASSOC);
+if(!isset($_SESSION['sId']) && $team['userId'] != $_SESSION['sId']){
+    header("Location: {$_SERVER['HTTP_REFERER']}");
+    exit;
+}
 ?>
     <main>
         <div class="container">

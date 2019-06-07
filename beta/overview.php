@@ -16,20 +16,6 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC);
     <main>
         <div class="container">
 				<?php
-		            if(isset($_SESSION['adminID'])) {
-            			echo "<div class=\"teams\">";
-            			foreach ($teams as $team) {
-			                $teamName = htmlentities($team['teamName']);
-			                echo "<div class=\"team\">$teamName</div>
-			                		<form action=\"teamController.php\" method=\"post\">
-										<input type=\"hidden\" name=\"type\" value=\"delete\">
-										<button class=\"delete-btn\" formaction=\"teamController.php\" type=\"submit\">Delete</button>			                        
-									</form>
-			                		";
-			        		}
-			        	echo "</div>";	
-			        }		
-			        else{
 			        	echo "<div class=\"teams-normal\">";
 			        	foreach ($teams as $team) {
 			                $teamName = htmlentities($team['teamName']);
@@ -37,7 +23,6 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC);
 			                ";
 			            }
 			        	echo "</div>";
-		        	} 
 				?>
         </div>
     </main>

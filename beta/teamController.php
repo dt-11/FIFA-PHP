@@ -5,8 +5,8 @@ require 'config.php';
 session_start();
 
 if ($_POST['type'] == 'delete'){
-    $id = $_SESSION['sID'];
-    $sqlDelete = "DELETE FROM teams WHERE teamUserId = :id";
+    $id = $_GET['id'];
+    $sqlDelete = "DELETE FROM teams WHERE teamId = :id";
     $prepareDelete = $db->prepare($sqlDelete);
     $prepareDelete->execute([
         ':id' => $id
