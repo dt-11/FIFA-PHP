@@ -50,11 +50,7 @@ if ($_POST['type'] == 'createTeam') {
         ':teamName' => $teamName
     ]);
     $teamExist = $teamVerify->rowCount();
-    if ($teamExist) {
-        $message = "Team name already exists, choose a different team name.";
-        header("location: register.php?msg=$message");
-        exit;
-    } else {
+    if (!$teamExist) {
         $sqlCreateTeam = "INSERT INTO teams (teamName, teamValue, teamUserId )
                               VALUES (:teamName, :teamPlayers, :ownerId)";
         $prepareTeamCreate = $db->prepare($sqlCreateTeam);
@@ -65,6 +61,10 @@ if ($_POST['type'] == 'createTeam') {
         ]);
         $message = "Team has been succesfully made!";
         header("location: overview.php?msg=$message");
+        exit;
+    } else {
+        $message = "Team name already exists, choose a different team name.";
+        header("location: createTeam.php?msg=$message");
         exit;
     }
 }
